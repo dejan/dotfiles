@@ -40,11 +40,23 @@ set notimeout
 set ttimeout
 set ttimeoutlen=100
 
-" Indent lines with cmd+[ and cmd+]
+"" Indent lines with cmd+[ and cmd+]
 nmap <D-]> >>
 nmap <D-[> <<
 vmap <D-[> <gv
 vmap <D-]> >gv
+
+"" Rename current file
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
 
 "" Vundle
 filetype off                
@@ -62,7 +74,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "tomtom/tcomment_vim"
 Bundle "spolu/dwm.vim"
 
-" TComment config
+"" TComment config
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 
@@ -103,18 +115,3 @@ imap <D-R> <esc>:CtrlPBufTagAll<cr>
 " Open goto file
 nmap <D-t> :CtrlP<cr>
 imap <D-t> <esc>:CtrlP<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RENAME CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-map <leader>n :call RenameFile()<cr>
-
