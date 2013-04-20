@@ -3,7 +3,6 @@ set exrc                    " load vimrc from current directory
 set nocompatible            " vim only
 
 "" Display
-color twilight              " color scheme
 syntax enable               " syntax highlight
 set synmaxcol=800           " don't try to highlight long lines
 set guifont=Monaco:h12      " font
@@ -65,6 +64,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 filetype plugin indent on
 
+Bundle "kien/ctrlp.vim"
 Bundle "tpope/vim-rails.git"
 Bundle "kchmck/vim-coffee-script"
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -73,13 +73,16 @@ Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
 Bundle "tomtom/tcomment_vim"
 Bundle "spolu/dwm.vim"
+Bundle "flazz/vim-colorschemes"
+
+"" Color scheme
+color twilight  
 
 "" TComment config
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 
 "" CtrlP config
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<D-t>'
 let g:ctrlp_cmd = 'CtrlPMixed'			" search anything (in files, buffers and MRU files at the same time.)
 let g:ctrlp_working_path_mode = 'ra'	" search for nearest ancestor like .git, .hg, and the directory of the current file
