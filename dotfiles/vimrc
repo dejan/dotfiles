@@ -5,7 +5,7 @@ set nocompatible            " vim only
 "" Display
 syntax enable               " syntax highlight
 set synmaxcol=800           " don't try to highlight long lines
-set guifont=Monaco:h12      " font
+set guifont=Monaco:h14      " font
 set number                  " show line number
 set showmode                " display the current mode
 set showcmd                 " display partially-typed commands in the status line
@@ -32,7 +32,12 @@ set incsearch                    " incremental searching
 set ignorecase                   " searches are case insensitive...
 set smartcase                    " ... unless they contain at least one capital letter
 set gdefault                     " have :s///g flag by default on
-nnoremap <cr> :nohlsearch<cr>    " Clear the search buffer when hitting return
+" <cr> to remove highlighted search results
+" wrapping this in function prevents annoying 2-space jump
+function! MapCR()
+  nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
 
 "" Time out on key codes but not mappings (makes terminal Vim work sanely)
 set notimeout
@@ -74,6 +79,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "tomtom/tcomment_vim"
 Bundle "spolu/dwm.vim"
 Bundle "flazz/vim-colorschemes"
+Bundle "mileszs/ack.vim"
 
 "" Color scheme
 color twilight  
@@ -81,6 +87,9 @@ color twilight
 "" TComment config
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
+
+"" Ack
+nmap <D-F> :Ack<space>
 
 "" CtrlP config
 let g:ctrlp_map = '<D-t>'
@@ -116,5 +125,3 @@ imap <D-R> <esc>:CtrlPBufTagAll<cr>
 " Open goto file
 nmap <D-t> :CtrlP<cr>
 imap <D-t> <esc>:CtrlP<cr>
-
-

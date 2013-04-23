@@ -1,8 +1,5 @@
 export EDITOR=mvim     
 
-# vi bindings in the shell         
-set -o vi              
-
 # colors in terminal
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
