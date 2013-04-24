@@ -10,3 +10,8 @@
 # add types ack doesn't know about
 --type-set=MARKDOWN=md,mkd,markdown
 --type-set=RDOC=rdoc
+
+# paths to be ignored
+--ignore-dir=db
+--ignore-dir=log
+--ignore-dir=tmp
