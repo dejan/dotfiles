@@ -16,3 +16,4 @@
 --ignore-dir=db
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=public
