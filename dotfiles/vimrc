@@ -80,6 +80,7 @@ Bundle "tomtom/tcomment_vim"
 Bundle "spolu/dwm.vim"
 Bundle "flazz/vim-colorschemes"
 Bundle "mileszs/ack.vim"
+Bundle "tpope/vim-fugitive"
 
 "" Color scheme
 color twilight  
