@@ -83,6 +83,7 @@ Bundle "spolu/dwm.vim"
 Bundle "flazz/vim-colorschemes"
 Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
+Bundle "ervandew/supertab"
 
 "" Color scheme
 color twilight  
