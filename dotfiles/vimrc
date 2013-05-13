@@ -49,6 +49,8 @@ nmap <D-]> >>
 nmap <D-[> <<
 vmap <D-[> <gv
 vmap <D-]> >gv
+imap <D-]> <esc>>>
+imap <D-[> <esc><<
 
 "" Rename current file
 function! RenameFile()
@@ -82,7 +84,7 @@ Bundle "flazz/vim-colorschemes"
 Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/syntastic"
-
+Bundle "ervandew/supertab"
 
 "" Color scheme
 color twilight  
