@@ -8,6 +8,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export HISTCONTROL=ignoredups  
 
 # auto chruby
+source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 # put current git branch in the prompt
