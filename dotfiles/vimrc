@@ -81,6 +81,8 @@ Bundle "spolu/dwm.vim"
 Bundle "flazz/vim-colorschemes"
 Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
+Bundle "scrooloose/syntastic"
+
 
 "" Color scheme
 color twilight  
