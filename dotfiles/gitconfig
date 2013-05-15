@@ -2,9 +2,6 @@
   name = Dejan Simic
   email = desimic@gmail.com
 
-[core]
-  editor = mvim
-
 [push]
   default = current
 
