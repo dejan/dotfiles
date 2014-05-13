@@ -5,6 +5,11 @@ alias intip="ifconfig | grep 'inet ' | grep -v 127.0.0.1  | cut -d  ' ' -f 2"
 # set editor
 export EDITOR=vim
 
+# http://fredwu.me/post/60441991350/protip-ruby-devs-please-tweak-your-gc-settings-for
+export RUBY_GC_MALLOC_LIMIT=90000000
+export RUBY_FREE_MIN=200000
+export RUBY_GC_HEAP_FREE_SLOTS=$RUBY_FREE_MIN   # ruby 2.1
+
 # colors in terminal
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
