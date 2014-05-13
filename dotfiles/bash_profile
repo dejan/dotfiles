@@ -1,3 +1,8 @@
+# what's my ip
+alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias intip="ifconfig | grep 'inet ' | grep -v 127.0.0.1  | cut -d  ' ' -f 2"
+
+# set editor
 export EDITOR=vim
 
 # colors in terminal
