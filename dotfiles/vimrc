@@ -85,6 +85,7 @@ Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/syntastic"
 Bundle "ervandew/supertab"
+Bundle 'jnwhiteh/vim-golang'
 
 "" Color scheme
 color twilight  
