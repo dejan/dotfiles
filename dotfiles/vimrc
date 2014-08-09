@@ -2,6 +2,9 @@
 set exrc                    " load vimrc from current directory
 set nocompatible            " vim only
 
+"" History
+set history=1000
+
 "" Display
 syntax enable               " syntax highlight
 set synmaxcol=800           " don't try to highlight long lines
@@ -89,6 +92,8 @@ Bundle "ervandew/supertab"
 Bundle "jnwhiteh/vim-golang"
 Bundle "janx/vim-rubytest"
 Bundle "itchyny/lightline.vim"
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'tpope/vim-haml'
 
 "" Color scheme
 color twilight
