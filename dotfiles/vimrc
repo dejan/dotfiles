@@ -5,10 +5,11 @@ set nocompatible            " vim only
 "" Display
 syntax enable               " syntax highlight
 set synmaxcol=800           " don't try to highlight long lines
-set guifont=Monaco:h12      " font
+set guifont=Monaco:h14      " font
 set number                  " show line number
 set showmode                " display the current mode
 set showcmd                 " display partially-typed commands in the status line
+set laststatus=2            " neded for lightline.vim
 
 "" Clipboard
 set clipboard+=unnamed      " yanks go to clipboard
@@ -85,10 +86,12 @@ Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/syntastic"
 Bundle "ervandew/supertab"
-Bundle 'jnwhiteh/vim-golang'
+Bundle "jnwhiteh/vim-golang"
+Bundle "janx/vim-rubytest"
+Bundle "itchyny/lightline.vim"
 
 "" Color scheme
-color twilight  
+color twilight
 
 "" TComment config
 map <D-/> :TComment<cr>
