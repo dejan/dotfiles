@@ -143,3 +143,11 @@ imap <D-t> <esc>:CtrlP<cr>
 " https://github.com/gmarik/vundle/issues/176#issuecomment-12996269
 filetype off
 filetype plugin indent on
+
+"" configure vim-rubytest 
+let g:rubytest_in_quickfix = 1                                              " test output in quickfix window
+let g:rubytest_cmd_test = "spring rake test %p"                             " 'spring' is the fastest, compared to 'bundle exec' or 'bin/spring'
+let g:rubytest_cmd_testcase = "spring rake test %p TESTOPTS=\"-n '/%c/'\""  " same here
+" map key bindings
+map <Leader>Y <Plug>RubyTestRun
+map <Leader>t <Plug>RubyFileRun
