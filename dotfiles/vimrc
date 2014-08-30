@@ -8,7 +8,7 @@ set history=1000
 "" Display
 syntax enable               " syntax highlight
 set synmaxcol=800           " don't try to highlight long lines
-set guifont=Monaco:h14      " font
+set guifont=Monaco:h13      " font
 set number                  " show line number
 set showmode                " display the current mode
 set showcmd                 " display partially-typed commands in the status line
@@ -76,24 +76,18 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on
 
 Bundle "kien/ctrlp.vim"
-Bundle "tpope/vim-rails.git"
 Bundle "kchmck/vim-coffee-script"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
-Bundle "garbas/vim-snipmate"
 Bundle "tomtom/tcomment_vim"
-Bundle "spolu/dwm.vim"
 Bundle "flazz/vim-colorschemes"
 Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/syntastic"
 Bundle "ervandew/supertab"
-Bundle "jnwhiteh/vim-golang"
-Bundle "janx/vim-rubytest"
 Bundle "itchyny/lightline.vim"
-Bundle 'jnwhiteh/vim-golang'
+Bundle "janx/vim-rubytest"
 Bundle 'tpope/vim-haml'
+Bundle "fatih/vim-go"
+Bundle "derekwyatt/vim-scala"
 
 "" Color scheme
 color twilight
