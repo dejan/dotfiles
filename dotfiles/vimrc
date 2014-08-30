@@ -8,7 +8,7 @@ set history=1000
 "" Display
 syntax enable               " syntax highlight
 set synmaxcol=800           " don't try to highlight long lines
-set guifont=Monaco:h14      " font
+set guifont=Monaco:h13      " font
 set number                  " show line number
 set showmode                " display the current mode
 set showcmd                 " display partially-typed commands in the status line
