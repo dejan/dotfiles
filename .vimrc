@@ -90,7 +90,7 @@ Bundle "derekwyatt/vim-scala"
 Bundle "vim-scripts/bufkill.vim"
 
 "" Color scheme
-color twilight
+color dracula
 
 "" TComment config
 map <D-/> :TComment<cr>
