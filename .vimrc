@@ -145,3 +145,7 @@ let g:rubytest_cmd_testcase = "spring rake test %p TESTOPTS=\"-n '/%c/'\""  " sa
 " map key bindings
 map <Leader>Y <Plug>RubyTestRun
 map <Leader>t <Plug>RubyFileRun
+
+" markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'sql']
