@@ -1,3 +1,8 @@
+# bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # what's my ip
 alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias intip="ipconfig getifaddr en0"
