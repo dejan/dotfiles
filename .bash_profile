@@ -1,6 +1,6 @@
 # what's my ip
 alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias intip="ifconfig | grep 'inet ' | grep -v 127.0.0.1  | cut -d  ' ' -f 2"
+alias intip="ipconfig getifaddr en0"
 
 # set default locale
 export LANG=en_US.UTF-8
