@@ -87,8 +87,11 @@ Bundle "ervandew/supertab"
 Bundle "itchyny/lightline.vim"
 Bundle "janx/vim-rubytest"
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
 Bundle "derekwyatt/vim-scala"
 Bundle "vim-scripts/bufkill.vim"
+Bundle "t9md/vim-ruby-xmpfilter"
 
 "" Color scheme
 color dracula
@@ -150,3 +153,12 @@ map <Leader>t <Plug>RubyFileRun
 " markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'sql']
+
+" xmpfilter (rcodetools)
+" https://coderwall.com/p/3vtqwq/evaluate-ruby-in-vim
+nmap <buffer> <D-E> <Plug>(xmpfilter-run)
+xmap <buffer> <D-E> <Plug>(xmpfilter-run)
+imap <buffer> <D-E> <Plug>(xmpfilter-run)
+nmap <buffer> <D-e> <Plug>(xmpfilter-mark)
+xmap <buffer> <D-e> <Plug>(xmpfilter-mark)
+imap <buffer> <D-e> <Plug>(xmpfilter-mark)
