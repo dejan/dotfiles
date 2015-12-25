@@ -92,6 +92,8 @@ Bundle 'tpope/vim-repeat'
 Bundle "derekwyatt/vim-scala"
 Bundle "vim-scripts/bufkill.vim"
 Bundle "t9md/vim-ruby-xmpfilter"
+Bundle "elixir-lang/vim-elixir"
+Bundle "mattn/emmet-vim"
 
 "" Color scheme
 color dracula
@@ -111,7 +113,7 @@ let g:ctrlp_use_caching = 1				    " enable caching
 let g:ctrlp_clear_cache_on_exit=0  		" speed up by not removing clearing cache evertime
 let g:ctrlp_show_hidden = 1				    " show me dotfiles
 let g:ctrlp_mruf_max = 250 				    " number of recently opened files
-set wildignore+=*/tmp/*,*/log/*,*/var/*,*.so,*.swp,*.log,*.class,*/target/*  " exclude files and directories using Vim's wildignore
+set wildignore+=*/tmp/*,*/log/*,*/var/*,*.so,*.swp,*.log,*.class,*/target/*,*/_build/*,*/node_modules/*,*/deps/*  " exclude files and directories using Vim's wildignore
 
 " TODO: add javascript and some other languages who doesn't have ctags support
 " coffee: https://gist.github.com/michaelglass/5210282
