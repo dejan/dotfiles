@@ -1,5 +1,0 @@
----
-BUNDLE_BUILD__RUBY-FILEMAGIC: "--with-magic-dir=/usr/local/Cellar/libmagic/5.19"
-BUNDLE_BUILD__RUBY-ODBC: "--with-odbc-dir=/usr/local/Cellar/unixodbc/2.3.2"
-BUNDLE_BUILD__NOKOGIRI: --use-system-libraries --with-xml2-include=/usr/include/libxml2 --with-xml2-lib=/usr/lib/
-BUNDLE_BUILD__RUBY-MCRYPT: "--with-mcrypt-dir=/usr/local/Cellar/mcrypt/2.6.8"
