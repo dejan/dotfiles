@@ -87,7 +87,8 @@ Plugin 'tpope/vim-haml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'lambdatoast/elm.vim.git'
 Plugin 'dejan/oceanic-next'
-call vundle#end()
+" https://github.com/gmarik/vundle/issues/176#issuecomment-12996269
+filetype off
 filetype plugin indent on
 "" }
 
@@ -133,7 +134,3 @@ imap <D-R> <esc>:CtrlPBufTagAll<cr>
 " Open goto file
 nmap <D-t> :CtrlP<cr>
 imap <D-t> <esc>:CtrlP<cr>
-
-" https://github.com/gmarik/vundle/issues/176#issuecomment-12996269
-filetype off
-filetype plugin indent on
