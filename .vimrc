@@ -13,7 +13,7 @@ set number                  " show line number
 set showmode                " display the current mode
 set showcmd                 " display partially-typed commands in the status line
 set laststatus=2            " neded for lightline.vim
-set list                    " show whitespace
+set background=dark
 
 "" Clipboard
 set clipboard+=unnamed      " yanks go to clipboard
@@ -69,41 +69,53 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-"" Vundle
-filetype off                
+"" Remove trailing whitespace on save
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+"" Vundle {
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 filetype plugin indent on
 
-Bundle "kien/ctrlp.vim"
-Bundle "kchmck/vim-coffee-script"
-Bundle "tomtom/tcomment_vim"
-Bundle "flazz/vim-colorschemes"
-Bundle "mileszs/ack.vim"
-Bundle "tpope/vim-fugitive"
-Bundle "scrooloose/syntastic"
-Bundle "ervandew/supertab"
-Bundle "itchyny/lightline.vim"
-Bundle "janx/vim-rubytest"
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle "derekwyatt/vim-scala"
-Bundle "vim-scripts/bufkill.vim"
-Bundle "t9md/vim-ruby-xmpfilter"
-Bundle "elixir-lang/vim-elixir"
-Bundle "mattn/emmet-vim"
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'itchyny/lightline.vim'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-haml'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'lambdatoast/elm.vim.git'
+Plugin 'dejan/oceanic-next'
+call vundle#end()
+filetype plugin indent on
+"" }
 
-"" Color scheme
-color dracula
+" Theme
+set t_Co=256
+colorscheme OceanicNext " requires: https://github.com/mhartington/oceanic-next-iterm
+set background=dark
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 "" TComment config
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
-
-"" Ack
-nmap <D-F> :Ack<space>
 
 "" CtrlP config
 let g:ctrlp_map = '<D-t>'
@@ -114,12 +126,6 @@ let g:ctrlp_clear_cache_on_exit=0  		" speed up by not removing clearing cache e
 let g:ctrlp_show_hidden = 1				    " show me dotfiles
 let g:ctrlp_mruf_max = 250 				    " number of recently opened files
 set wildignore+=*/tmp/*,*/log/*,*/var/*,*.so,*.swp,*.log,*.class,*/target/*,*/_build/*,*/node_modules/*,*/deps/*  " exclude files and directories using Vim's wildignore
-
-" TODO: add javascript and some other languages who doesn't have ctags support
-" coffee: https://gist.github.com/michaelglass/5210282
-" go: http://stackoverflow.com/a/8236826/462233 
-" objc:  http://www.gregsexton.org/2011/04/objective-c-exuberant-ctags-regex/
-" rust: https://github.com/mozilla/rust/blob/master/src/etc/ctags.rust
 let g:ctrlp_buftag_types = {
 \ 'go'     	   : '--language-force=go --golang-types=ftv',
 \ 'coffee'     : '--language-force=coffee --coffee-types=cmfvf',
@@ -144,23 +150,6 @@ imap <D-t> <esc>:CtrlP<cr>
 filetype off
 filetype plugin indent on
 
-"" configure vim-rubytest 
-let g:rubytest_in_quickfix = 1                                              " test output in quickfix window
-let g:rubytest_cmd_test = "spring rake test %p"                             " 'spring' is the fastest, compared to 'bundle exec' or 'bin/spring'
-let g:rubytest_cmd_testcase = "spring rake test %p TESTOPTS=\"-n '/%c/'\""  " same here
-" map key bindings
-map <Leader>Y <Plug>RubyTestRun
-map <Leader>t <Plug>RubyFileRun
-
 " markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'sql']
-
-" xmpfilter (rcodetools)
-" https://coderwall.com/p/3vtqwq/evaluate-ruby-in-vim
-nmap <buffer> <D-E> <Plug>(xmpfilter-run)
-xmap <buffer> <D-E> <Plug>(xmpfilter-run)
-imap <buffer> <D-E> <Plug>(xmpfilter-run)
-nmap <buffer> <D-e> <Plug>(xmpfilter-mark)
-xmap <buffer> <D-e> <Plug>(xmpfilter-mark)
-imap <buffer> <D-e> <Plug>(xmpfilter-mark)
