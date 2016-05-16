@@ -49,14 +49,6 @@ set notimeout
 set ttimeout
 set ttimeoutlen=100
 
-"" Indent lines with cmd+[ and cmd+]
-nmap <D-]> >>
-nmap <D-[> <<
-vmap <D-[> <gv
-vmap <D-]> >gv
-imap <D-]> <esc>>>
-imap <D-[> <esc><<
-
 "" Rename current file
 function! RenameFile()
     let old_name = expand('%')
@@ -104,8 +96,8 @@ set t_Co=256
 colorscheme OceanicNext " requires: https://github.com/mhartington/oceanic-next-iterm
 set background=dark
 
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
+"" Show syntax highlighting groups for word under cursor (useful for tweaking colorscheme)
+nmap <C-S-I> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
@@ -113,12 +105,8 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-"" TComment config
-map <D-/> :TComment<cr>
-vmap <D-/> :TComment<cr>gv
-
 "" CtrlP config
-let g:ctrlp_map = '<D-t>'
+let g:ctrlp_map = '<c-p>'
 let g:ctrlp_max_height = 10				    " maxiumum height of match window
 let g:ctrlp_switch_buffer = 'et'		  " jump to a file if it's open already
 let g:ctrlp_use_caching = 1				    " enable caching
@@ -149,7 +137,3 @@ imap <D-t> <esc>:CtrlP<cr>
 " https://github.com/gmarik/vundle/issues/176#issuecomment-12996269
 filetype off
 filetype plugin indent on
-
-" markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'sql']
