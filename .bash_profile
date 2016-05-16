@@ -9,6 +9,7 @@ alias intip="ipconfig getifaddr en0"
 
 # set default locale
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # set editor
 export EDITOR=vim
@@ -18,7 +19,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups  
+export HISTCONTROL=ignoredups
 
 # auto chruby
 source /usr/local/share/chruby/chruby.sh
