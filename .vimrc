@@ -94,8 +94,8 @@ filetype plugin indent on
 
 " Theme
 set t_Co=256
-colorscheme OceanicNext " requires: https://github.com/mhartington/oceanic-next-iterm
 set background=dark
+colorscheme OceanicNext " requires: https://github.com/mhartington/oceanic-next-iterm
 
 "" Show syntax highlighting groups for word under cursor (useful for tweaking colorscheme)
 nmap <C-S-I> :call <SID>SynStack()<CR>
@@ -108,12 +108,12 @@ endfunc
 
 "" CtrlP config
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_max_height = 10				    " maxiumum height of match window
-let g:ctrlp_switch_buffer = 'et'		  " jump to a file if it's open already
-let g:ctrlp_use_caching = 1				    " enable caching
-let g:ctrlp_clear_cache_on_exit=0  		" speed up by not removing clearing cache evertime
-let g:ctrlp_show_hidden = 1				    " show me dotfiles
-let g:ctrlp_mruf_max = 250 				    " number of recently opened files
+let g:ctrlp_max_height = 10           " maxiumum height of match window
+let g:ctrlp_switch_buffer = 'et'      " jump to a file if it's open already
+let g:ctrlp_use_caching = 1           " enable caching
+let g:ctrlp_clear_cache_on_exit=0     " speed up by not removing clearing cache evertime
+let g:ctrlp_show_hidden = 1           " show me dotfiles
+let g:ctrlp_mruf_max = 250            " number of recently opened files
 set wildignore+=*/tmp/*,*/log/*,*/var/*,*.so,*.swp,*.log,*.class,*/target/*,*/_build/*,*/node_modules/*,*/deps/*  " exclude files and directories using Vim's wildignore
 let g:ctrlp_buftag_types = {
 \ 'go'     	   : '--language-force=go --golang-types=ftv',
@@ -122,15 +122,3 @@ let g:ctrlp_buftag_types = {
 \ 'objc'       : '--language-force=objc --objc-types=mpci',
 \ 'rc'         : '--language-force=rust --rust-types=fTm'
 \ }
-
-" Open goto symbol on current buffer
-nmap <D-r> :MyCtrlPTag<cr>
-imap <D-r> <esc>:MyCtrlPTag<cr>
-
-" Open goto symbol on all buffers
-nmap <D-R> :CtrlPBufTagAll<cr>
-imap <D-R> <esc>:CtrlPBufTagAll<cr>
-
-" Open goto file
-nmap <D-t> :CtrlP<cr>
-imap <D-t> <esc>:CtrlP<cr>

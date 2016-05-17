@@ -1,12 +1,13 @@
 [user]
-  name = Dejan Simic
-  email = desimic@gmail.com
+name = Dejan Simic
+email = desimic@gmail.com
 
 [push]
-  default = current
+default = current
 
 [color]
-  ui = true
+ui = true
 
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+lg = log --graph --oneline --decorate
+st = status -sb
