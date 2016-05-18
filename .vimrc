@@ -13,7 +13,6 @@ set number                  " show line number
 set showmode                " display the current mode
 set showcmd                 " display partially-typed commands in the status line
 set laststatus=2            " neded for lightline.vim
-set background=dark
 
 "" Clipboard
 set clipboard+=unnamed      " yanks go to clipboard
