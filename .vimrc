@@ -37,12 +37,6 @@ set incsearch                    " incremental searching
 set ignorecase                   " searches are case insensitive...
 set smartcase                    " ... unless they contain at least one capital letter
 set gdefault                     " have :s///g flag by default on
-" <cr> to remove highlighted search results
-" wrapping this in function prevents annoying 2-space jump
-function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
 
 "" Time out on key codes but not mappings (makes terminal Vim work sanely)
 set notimeout
@@ -60,6 +54,9 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+
+" Remove highlighted search results
+nnoremap <C-L> :nohlsearch<CR><C-L>
 
 "" Remove trailing whitespace on save
 function! <SID>StripTrailingWhitespaces()
