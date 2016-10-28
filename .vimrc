@@ -81,6 +81,8 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-haml'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'lambdatoast/elm.vim.git'
 Plugin 'dejan/oceanic-next'
 " https://github.com/gmarik/vundle/issues/176#issuecomment-12996269
