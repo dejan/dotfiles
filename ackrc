@@ -1,7 +1,7 @@
 # lexically sort filenames
 --sort-files
 
---type-add=ruby=rake,haml
+--type-add=ruby=rake
 --type-add=vim=vimrc
 --type-add=js=json
 --type-set=cucumber=feature
@@ -9,11 +9,20 @@
 --type-set=coffee=coffee
 
 # add types ack doesn't know about
---type-set=MARKDOWN=md,mkd,markdown
---type-set=RDOC=rdoc
+--type-set=MARKDOWN=.md,.markdown
+--type-set=haml=.haml
+--type-set=sass=.sass
+--type-set=RDOC=.rdoc
 
 # paths to be ignored
 --ignore-dir=db
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=public
+--ignore-dir=target
+--ignore-dir=.deploy
+--ignore-dir=coverage
+--ignore-dir=_build
+--ignore-dir=deps
+--ignore-dir=node_modules
+--ignore-dir=priv

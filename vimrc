@@ -74,16 +74,9 @@ Plugin 'VundleVim/Vundle.vim'
 filetype plugin indent on
 
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tomtom/tcomment_vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-haml'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'lambdatoast/elm.vim.git'
 Plugin 'dejan/oceanic-next'
 " https://github.com/gmarik/vundle/issues/176#issuecomment-12996269
 filetype off
@@ -95,20 +88,11 @@ set t_Co=256
 set background=dark
 colorscheme OceanicNext " requires: https://github.com/mhartington/oceanic-next-iterm
 
-"" Show syntax highlighting groups for word under cursor (useful for tweaking colorscheme)
-nmap <C-S-I> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
 "" CtrlP config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_max_height = 10           " maxiumum height of match window
 let g:ctrlp_switch_buffer = 'et'      " jump to a file if it's open already
-let g:ctrlp_use_caching = 1           " enable caching
+let g:ctrlp_use_caching = 0           " disable caching
 let g:ctrlp_clear_cache_on_exit=0     " speed up by not removing clearing cache evertime
 let g:ctrlp_show_hidden = 1           " show me dotfiles
 let g:ctrlp_mruf_max = 250            " number of recently opened files

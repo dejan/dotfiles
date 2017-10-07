@@ -8,6 +8,5 @@ default = current
 [color]
 ui = true
 
-[alias]
-lg = log --graph --oneline --decorate
-st = status -sb
+[github]
+user = dejan

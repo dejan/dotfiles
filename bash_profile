@@ -66,23 +66,17 @@ process_at_port() {
  fi
 }
 
-# docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/dejan.simic/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
-# java world
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export SCALA_HOME=/usr/local/opt/scala/idea
-export HADOOP_PREFIX=~/opt/hadoop-2.6.4
-
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
 # what's my ip
 alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias intip="ifconfig | grep 'inet ' | grep -v 127.0.0.1  | cut -d  ' ' -f 2"
 
-# engine
-alias clean_engine='rm -rf /tmp/zookeeper/* /tmp/kafka-logs ~/log/*'
+# asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+export PATH=$PATH:$HOME/bin:$HOME/opt/confluent/bin:$HOME/.tfenv/bin
+
+# go
+export GOPATH=$HOME
+
+#export AWS_PROFILE=saml
