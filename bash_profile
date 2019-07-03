@@ -70,13 +70,5 @@ process_at_port() {
 alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias intip="ifconfig | grep 'inet ' | grep -v 127.0.0.1  | cut -d  ' ' -f 2"
 
-# asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
-export PATH=$PATH:$HOME/bin:$HOME/opt/confluent/bin:$HOME/.tfenv/bin
-
 # go
 export GOPATH=$HOME
-
-#export AWS_PROFILE=saml
