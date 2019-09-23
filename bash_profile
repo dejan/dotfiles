@@ -72,3 +72,7 @@ alias intip="ifconfig | grep 'inet ' | grep -v 127.0.0.1  | cut -d  ' ' -f 2"
 
 # go
 export GOPATH=$HOME
+
+# ruby
+# brew install rbevn
+eval "$(rbenv init -)"
