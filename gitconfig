@@ -2,6 +2,9 @@
 name = Dejan Simic
 email = desimic@gmail.com
 
+[branch]
+sort = -committerdate
+
 [push]
 default = current
 
