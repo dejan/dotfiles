@@ -11,5 +11,9 @@ default = current
 [color]
 ui = true
 
+[fetch]
+prune = true
+
 [github]
 user = dejan
+
