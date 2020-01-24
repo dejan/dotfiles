@@ -17,3 +17,5 @@ prune = true
 [github]
 user = dejan
 
+[rebase]
+autosquash = true
