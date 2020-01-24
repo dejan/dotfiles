@@ -1,21 +1,21 @@
 [user]
-name = Dejan Simic
-email = desimic@gmail.com
+  name = Dejan Simic
+  email = desimic@gmail.com
 
 [branch]
-sort = -committerdate
+  sort = -committerdate
 
 [push]
-default = current
+  default = current
 
 [color]
-ui = true
+  ui = true
 
 [fetch]
-prune = true
+  prune = true
 
 [github]
-user = dejan
+  user = dejan
 
 [rebase]
-autosquash = true
+  autosquash = true
